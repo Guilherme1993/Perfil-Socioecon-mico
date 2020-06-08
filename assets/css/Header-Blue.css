@@ -110,3 +110,10 @@ body, html {
   height: auto;
 }
 
+.filter-button {
+  color: #ebeff1;
+  background-color: #255872;
+  border-radius: 25px;
+  padding: 5px;
+}
+

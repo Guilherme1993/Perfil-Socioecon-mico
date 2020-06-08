@@ -22,7 +22,16 @@
                     <p>Essa aplicação tem como objetivo a análise do perfil socioeconômico dos alunos da Fatec
                         Franca.<br></p>
                     <p>Para iniciar, selecione um arquivo .csv com as informações.<br></p>
-                    <!-- <button class="btn btn-light btn-lg action-button" type="button" onclick="mudarEstado()"> <a href="#minhaDiv" style="color: white; text-decoration: none;">Importar arquivo .csv</a></button> -->
+                    <p>Você também pode selecionar um período específico.</p>
+                    <div style="color: rgb(206, 206, 206);">
+                        <form>
+                            <input type="radio" id="matutino" name="periodo" value="Matutino">
+                            <label for="matutino">Matutino</label>
+                            <input type="radio" id="noturno" name="periodo" value="Noturno">
+                            <label for="noturno">Noturno</label><br>
+                            <!-- <button id="filter" class="filter-button" type="button">Aplicar Filtro</button> -->
+                        </form>
+                    </div>
                     <p>Importar arquivo .csv:</p>
                     <input id="csv" type="file">
                 </div>
@@ -34,14 +43,231 @@
             </div>
         </div>
     </div>
-    <div id="minhaDiv" style="display: none; height: 950px;">
-        <canvas id="myChart" width="200" height="200"></canvas>
+    <div id="minhaDiv" style="display: none; position: relative;">
+        <hr>
+        <div id="qtdeRespostas" style="font-size: large;"></div>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Curso</label>
+        <canvas id="myChart" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Período</label>
+        <canvas id="myChart1" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Estado(Nascimento)</label>
+        <canvas id="myChart2" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Cidade(Mora Atualmente)</label>
+        <canvas id="myChart3" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Gênero</label>
+        <canvas id="myChart4" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Faixa Etária</label>
+        <canvas id="myChart5" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Estado Civil</label>
+        <canvas id="myChart6" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Necessidades Especiais</label>
+        <canvas id="myChart7" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Quantidade Filhos</label>
+        <canvas id="myChart8" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Com Quem Mora</label>
+        <canvas id="myChart9" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Quantidade de Moradores</label>
+        <canvas id="myChart10" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Situação Imóvel</label>
+        <canvas id="myChart11" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Tempo Moradia</label>
+        <canvas id="myChart12" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Faixa de Renda</label>
+        <canvas id="myChart13" width="20vh" height="10vh"></canvas>
+        <hr>
+        <p style="text-align: center; font-size: larger; width: 100%;">Quantidade de Itens (No Domicílio)</p>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">TV</label>
+        <canvas id="myChart14" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Vídeo Cassete</label>
+        <canvas id="myChart15" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Rádio</label>
+        <canvas id="myChart16" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Automóvel</label>
+        <canvas id="myChart17" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Moto</label>
+        <canvas id="myChart18" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Celular Comum</label>
+        <canvas id="myChart19" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Smartphone</label>
+        <canvas id="myChart20" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Microcomputador</label>
+        <canvas id="myChart21" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Notebook</label>
+        <canvas id="myChart22" width="20vh" height="10vh"></canvas>
+        <hr>
+        <p style="text-align: center; font-size: larger; width: 100%;">Possui no Domicílio</p>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Telefone</label>
+        <canvas id="myChart23" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Internet</label>
+        <canvas id="myChart24" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Tv por Assinatura</label>
+        <canvas id="myChart25" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Empregada Mensalista</label>
+        <canvas id="myChart26" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Trabalha</label>
+        <canvas id="myChart27" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Vínculo Empregatício</label>
+        <canvas id="myChart28" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Área de Trabalho</label>
+        <canvas id="myChart29" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Horário de Trabalho</label>
+        <canvas id="myChart30" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Plano de Saúde Privado</label>
+        <canvas id="myChart31" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Escolaridade Mãe</label>
+        <canvas id="myChart32" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Escolaridade Pai</label>
+        <canvas id="myChart33" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Onde Estudou</label>
+        <canvas id="myChart34" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Uso de Computadores (Frequência)</label>
+        <canvas id="myChart35" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Uso de Computadores (Local)</label>
+        <canvas id="myChart36" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Uso de Computadores (Finalidade)</label>
+        <canvas id="myChart37" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Conhecimento(Informática)</label>
+        <canvas id="myChart38" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Conhecimento(Windows)</label>
+        <canvas id="myChart39" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Conhecimento(Linux)</label>
+        <canvas id="myChart40" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Conhecimento(Editores de Texto)</label>
+        <canvas id="myChart41" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Conhecimento(Planilhas Eletrônicas)</label>
+        <canvas id="myChart42" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Conhecimento(Apresentadores)</label>
+        <canvas id="myChart43" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Conhecimento(Sistemas de Gestão
+            Empresarial)</label>
+        <canvas id="myChart44" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Conhecimento(Inglês)</label>
+        <canvas id="myChart45" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Conhecimento(Espanhol)</label>
+        <canvas id="myChart46" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Conhecimento(Outros Idiomas)</label>
+        <canvas id="myChart47" width="20vh" height="10vh"></canvas>
+        <hr>
+        <p style="text-align: center; font-size: larger; width: 100%;">Busca Por Informação</p>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">TV</label>
+        <canvas id="myChart48" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Internet</label>
+        <canvas id="myChart49" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Revista</label>
+        <canvas id="myChart50" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Rádio</label>
+        <canvas id="myChart51" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Redes Sociais</label>
+        <canvas id="myChart52" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Conversa com Amigos</label>
+        <canvas id="myChart53" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Com Qual Frequência lê Jornais</label>
+        <canvas id="myChart54" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Assuntos Mais Lidos (Jornais)</label>
+        <canvas id="myChart55" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Quantidade de Livros Lidos / Ano</label>
+        <canvas id="myChart56" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Gênero Preferido (Livros)</label>
+        <canvas id="myChart57" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Atividades Voluntárias</label>
+        <canvas id="myChart58" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Religião</label>
+        <canvas id="myChart59" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Entretenimento Cultural</label>
+        <canvas id="myChart60" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Como Conheceu a Fatec</label>
+        <canvas id="myChart61" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Motivo de Escolha (Curso)</label>
+        <canvas id="myChart62" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Expectativa (Curso)</label>
+        <canvas id="myChart63" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Expectativa (Após se Formar)</label>
+        <canvas id="myChart64" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Já Estudou na Fatec</label>
+        <canvas id="myChart65" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Fez Algum Curso Técnico</label>
+        <canvas id="myChart66" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Meio de Transporte</label>
+        <canvas id="myChart67" width="20vh" height="10vh"></canvas>
+        <hr>
+        <label style="text-align: center; font-size: larger; width: 100%;">Palavras Mais Utilizadas (Geral)</label>
+        <hr>
+        <div id="nuvem"></div>
+
     </div>
 
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
-    <script src="index.js"></script>
+    <script type="module" src="index.js"></script>
 </body>
 
 </html>
